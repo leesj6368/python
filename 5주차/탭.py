@@ -1,24 +1,16 @@
-from tkinter import*
+import tkinter as tk
 from tkinter import ttk
 
-window=Tk()
-window.iconbitmap('python.ico')
+win = tk.Tk()
+win.title("tk")
 
-baseTab=ttk.Notebook(window)
+tabControl = ttk.Notebook(win)
+tab1 = ttk.Frame(tabControl)            
+tabControl.add(tab1, text = '고양이')    
+tab2 = ttk.Frame(tabControl)            
+tabControl.add(tab2, text = '강아지')     
 
-tabDog=ttk.Frame(baseTab)
-baseTab.add(tabDog,text='강아지')
-tabCat=ttk.Frame(baseTab)
-baseTab.add(tabCat,text='고양이')
+tabControl.pack(expand = 1, fill = "both") 
 
-baseTab.pack(expand=1, fill="both")
 
-photoDog=PhotoImage(file="gif/dog7.gif")
-labelDog=Label(tabDog, image=photoDog)
-labelDog.pack()
-
-photoCat=PhotoImage(file="gif/cat5.gif")
-labelCat=Label(tabCat, image=photoCat)
-labelCat.pack()
-
-window.mainloop()
+win.mainloop()
